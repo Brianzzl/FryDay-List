@@ -5,8 +5,8 @@ router.route("/").get(taskControl.findAll);
 
 router.route("/add").post(taskControl.create);
 
-router.route("/update").put(taskControl.update);
+router.route("/update/:id").put(taskControl.update);
 
-router.route("/delete").delete(taskControl.delete);
+router.route("/delete/:id").delete(taskControl.delete);
 
 module.exports = router;
