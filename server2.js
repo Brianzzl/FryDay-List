@@ -25,6 +25,10 @@ mongoose
   })
   .catch(err => console.error(err));
 
+const taskRouter = require("./endPoints/task");
+
+app.use("/tasks", taskRouter);
+
 //start the Api server
 
 app.listen(PORT, () => {
