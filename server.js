@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const routes = require("./endPoints/api");
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -14,6 +15,9 @@ if (process.env.NODE_ENV === "priducton") {
 }
 
 //connect to MongoDB
+
+// Add routes,
+app.use(routes);
 
 mongoose
   .connect(process.env.MONGODB_URI, {
